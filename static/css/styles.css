@@ -1,0 +1,192 @@
+
+body {
+    background-color: #333;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    padding: 0 2% 2%;
+}
+
+p {
+    font-weight: 100;
+    font-size: 1.2rem;
+    }
+
+h1 {
+   padding: 1% 0;
+    }
+
+h3 {
+    line-height: 200%;
+    font-weight: normal;
+    color: #ffc107;
+}
+
+
+a {
+    color: #ffc107;
+    font-weight: 100;
+    text-decoration: none;
+}
+
+#coffee-sign {
+    width: 100%;
+    padding: 3% 0;
+    max-height: 600px;
+    }
+
+
+
+.btn-warning {
+    color: #FFFFFF;
+    background-color:#f0ad4e;
+    border-color: #eea236;
+}
+
+.btn-warning:hover {
+    color: #FFFFFF;
+    background-color: #EEA236;
+    border-color: #EC971E;
+}
+
+/*Index*/
+
+.jumbotron {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  color: white;
+  background-color: #333;
+}
+
+
+/* Navigation Bar */
+
+.navbar-brand {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+
+/* Cafe Displays */
+
+.cafe-img {
+    height: 100%;
+    width: 100%;
+    max-height: 400px;
+    max-width: 800px;
+    }
+
+.feature-img {
+    height: 8%;
+    width: 8%;
+    margin: 0 10px 12px 10px;
+}
+
+.col-md-6 {
+    padding:2% 0 0 4%;
+    }
+
+.cafe-details {
+    padding: 7% 0%;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.cafes a {
+    display:block;
+    font-size: 1.2rem
+}
+
+/*Cafe Page*/
+.attribute {
+    font-size: 0.8rem;
+}
+
+#return {
+    text-align:center;
+    font-weight:400;
+    padding:0;
+    font-size: 1.8rem;
+    }
+
+/* Forms */
+.search-form {
+    text-align: center;
+    padding: 0 1% 1% 1%;
+}
+
+.search-form label {
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.search-form input[type=text]  {
+    width: 15%;
+    min-width: 125px;
+    margin:  0 auto;
+    }
+
+.new-cafe-form {
+    text-align: left;
+    padding: 3% 2% 0 2%;
+}
+
+.new-cafe-form .col-md-6 {
+    padding:0 2% 0;
+}
+
+.new-cafe-form label {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #ffc107;
+    padding: 1% 0;
+}
+
+input {
+    margin: 1%;
+    background-color:#F8F8F8;
+    border-radius: 4px;
+}
+
+input[type=text] {
+    width:40%;
+    color: #333;
+}
+
+.btn-sm {
+    margin: 5% 8% 0 0;
+}
+
+/*Footer*/
+
+.footer p{
+    font-size: 0.8rem;
+    text-align: left;
+    padding-left: 4%;
+}
+/*Mobile Optimization*/
+@media (max-width: 768px){
+    .new-cafe-form{
+    text-align: center
+    }
+    .cafes .col-md-6 {
+        padding: 2% 4%;
+    }
+    .attribute {
+        text-align: center;
+    }
+    .footer p{
+        text-align:center;
+    }
+}
+
+

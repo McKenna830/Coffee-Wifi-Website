@@ -1,0 +1,90 @@
+{% import  'bootstrap/wtf.html' as wtf %}
+{% include 'header.html' %}
+
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid" id="page-top">
+      <a class="navbar-brand" href="{{ url_for('home') }}">COFFEE & WIFI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('cafes')}}">All Cafes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('add_cafe')}}">Add Cafe</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="search-form">
+    <hr>
+        <h1>FIND A CAFE</h1>
+
+        {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    <form method="POST" action="{{url_for('cafes')}}">
+        {{ form.csrf_token }}
+        {{ form.city.label }}<br>
+        {{ form.city }}<br>
+        {{ form.sockets.label }} {{ form.sockets }}<br>
+        {{ form.toilets.label }} {{ form.toilets }}<br>
+        {{ form.wifi.label }} {{ form.wifi }}<br>
+        {{ form.search (class_="btn-warning btn btn-lg") }}<br>
+    <hr>
+    </form>
+    </div>
+<section class="cafes">
+<div class="container-fluid">
+    {% for cafe in cafes %}
+    <div class="row">
+        <div class="col-md-6">
+            <img class= "cafe-img" src="{{cafe.img_url}}">
+        </div>
+        <div class="col-md-6 cafe-details">
+            <h1>{{cafe.name.upper()}}</h1>
+            <h3>{{cafe.location.upper()}}</h3>
+            <div class="cafe-features">
+
+                <p>Coffee Price: {{cafe.coffee_price}}</p>
+
+            {% if cafe.has_sockets %}
+               <img class="feature-img" src="static/images/plug.png" alt="outlet-symbol">
+            {% endif %}
+
+            {% if cafe.has_toilet %}
+                <img class="feature-img" src="static/images/bathroom.png" alt="bathroom-symbol">
+            {% endif %}
+
+            {% if cafe.has_wifi %}
+                <img class="feature-img" src="static/images/wifi.png" alt="wifi-symbol">
+            {% endif %}
+
+            <p>Number of Seats: {{cafe.seats}}</p>
+            <a class="link" href="{{cafe.map_url}}">Maps Link</a>
+            </div>
+        </div>
+    </div>
+                {% endfor %}
+
+    </div>
+</section>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <p class="attribute">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+        </div>
+        <div class="col-md-6">
+            <p id="return"><a href="#page-top">Return to Top</a></p>
+        </div>
+    </div>
+</div>
+    {% include 'footer.html' %}
